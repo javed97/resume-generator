@@ -16,8 +16,8 @@ provider "aws" {
 #############Security Group###################
 
 resource "aws_security_group" "Group18-DevSecOps" {
-  name        = "security-group-terraform"
-  description = "security-group-terraform"
+  name        = "security-group18-terraform"
+  description = "security-group18-terraform"
   vpc_id      = "vpc-0c735787e36a3c094"
 
   ingress {
