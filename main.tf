@@ -80,7 +80,8 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.medium"
   key_name               = "devops18"
   vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
-   user_data              =  <<-EOF
+   user_data              = mkdir test 
+                            <<-EOF
                              sudo apt update -y
                              mkdir test
                              cd /home/ubuntu/test
