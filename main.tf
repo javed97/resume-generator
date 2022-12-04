@@ -82,6 +82,8 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
    user_data              =  <<-EOF
                              sudo apt update -y
+                             mkdir test
+                             cd /home/ubuntu/test
                              git  init
                              git clone https://github.com/javed97/resume-generator.git
                              sleep 05
