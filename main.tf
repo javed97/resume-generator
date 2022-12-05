@@ -15,9 +15,9 @@ provider "aws" {
 
 #############Security Group###################
 
-resource "aws_security_group" "Group18-DevSecOps" {
-  name        = "security-group181-terraform"
-  description = "security-group181-terraform"
+resource "aws_security_group" "Group181-DevSecOps" {
+  name        = "security-group18-terraform"
+  description = "security-group18-terraform"
   vpc_id      = "vpc-0c735787e36a3c094"
 
   ingress {
@@ -79,7 +79,7 @@ resource "aws_instance" "app_server" {
   ami                    = "ami-096800910c1b781ba"
   instance_type          = "t2.medium"
   key_name               = "devops18"
-  vpc_security_group_ids = ["${aws_security_group.Group181-DevSecOps.id}"]
+  vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
    user_data              = file("script.sh")
   connection {
     type        = "ssh"
