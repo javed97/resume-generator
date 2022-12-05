@@ -54,8 +54,8 @@ resource "aws_security_group" "Group1811-DevSecOps" {
   }
   ingress {
     description      = "HTTP"
-    from_port        = 5000
-    to_port          = 5000
+    from_port        = 3000
+    to_port          = 3000
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
