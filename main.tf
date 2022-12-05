@@ -80,22 +80,7 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.medium"
   key_name               = "devops18"
   vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
-   user_data              = <<-EOF
-                             #!/bin/bash
-                             sudo apt update -y
-                             mkdir test
-                             cd /home/ubuntu/test
-                             git  init
-                             git clone https://github.com/javed97/resume-generator.git
-                             sleep 05
-                             sudo apt install npm  -y
-                             cd /home/ubuntu/resume-generator
-                             sudo npm -g install create-react-app
-                             sudo apt upgrade -y
-                             sudo npm run build
-                             sleep 10
-                             sudo npm start
-                             EOF
+   user_data              = file ("script.sh")
   connection {
     type        = "ssh"
     user        = "ubuntu"
