@@ -79,7 +79,7 @@ resource "aws_instance" "app_server" {
   ami                    = "ami-096800910c1b781ba"
   instance_type          = "t2.medium"
   key_name               = "devops18"
-  vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
+  vpc_security_group_ids = ["${aws_security_group.Group181-DevSecOps.id}"]
    user_data              = file("script.sh")
   connection {
     type        = "ssh"
