@@ -23,7 +23,7 @@ const Header = () => {
           <li class="nav-item">
             <Link class="nav-link" to="/#Templates">Templates</Link>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <Link class="nav-link" to="/#Features">Features</Link>
           </li>
           <li class="nav-item">
@@ -34,7 +34,7 @@ const Header = () => {
           </li>
           <li class="nav-item">
             <Link class="nav-link" to="/#ContactUs">Contact Us</Link>
-          </li>
+          </li> */}
         </ul>
 
         <ul className='navbar-nav align-items-center'>

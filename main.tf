@@ -80,7 +80,7 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.medium"
   key_name               = "devops18"
   vpc_security_group_ids = ["${aws_security_group.Group1811-DevSecOps.id}"]
-  user_data              = file ("script.sh")
+  #user_data              = file ("script.sh")
   connection {
     type        = "ssh"
     user        = "ubuntu"
@@ -88,20 +88,20 @@ resource "aws_instance" "app_server" {
     private_key = file("devops18.pem")
   }
 
-  #provisioner "file" {
-  #source      = "environment"
-  # destination = "/home/ubuntu"
-  #}
+  provisioner "file" {
+   source      = "environment"
+   destination = "/home/ubuntu"
+  }
 
 
   #provisioner "remote-exec" {
     # scripts = ["./exec_scripts/envsetup.sh", "./exec_scripts/service.sh"]
-   # inline = [
-    #   "sudo chmod -R 777 /home/ubuntu/environment",
-     #  "./environment/envsetup.sh"
+    inline = [
+       "sudo chmod -R 777 /home/ubuntu/environment",
+       "./environment/script.sh"
      #  "./environment/service.sh"
-   # ]
-  #}
+    ]
+  }
 
   tags = {
     Name = "group18-terraform"
