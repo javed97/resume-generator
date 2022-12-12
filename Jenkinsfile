@@ -2,11 +2,11 @@ pipeline {
 
     agent any
 
-    tools {
+    // tools {
 
-        terraform 'terraform'
+    //     terraform 'terraform'
 
-    }
+    // }
 
     stages {
 
