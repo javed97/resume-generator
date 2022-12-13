@@ -10,5 +10,5 @@ sudo /usr/bin/npm -g install create-react-app
 rm -rf node_modules
 sudo /usr/bin/npm install -y
 sudo /usr/bin/npm run build
-sleep 10
-sudo npm start & 
+sleep 05
+sudo /usr/bin/npm start & 
