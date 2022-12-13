@@ -11,4 +11,4 @@ rm -rf node_modules
 sudo /usr/bin/npm install -y
 sudo /usr/bin/npm run build
 sleep 10
-sudo npm start 
+sudo npm start & 
