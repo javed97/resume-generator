@@ -80,7 +80,7 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.medium"
   key_name               = "devops18"
   vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
-   user_data              =  file("script.sh")
+  user_data              =  file("script.sh")
   connection {
     type        = "ssh"
     user        = "ubuntu"
