@@ -15,9 +15,9 @@ provider "aws" {
 
 #############Security Group###################
 
-resource "aws_security_group" "Group18-DevSecOps" {
-  name        = "security-group18-terraform"
-  description = "security-group18-terraform"
+resource "aws_security_group" "Group182-DevSecOps" {
+  name        = "security-group182-terraform"
+  description = "security-group182-terraform"
   vpc_id      = "vpc-0c735787e36a3c094"
 
   ingress {
@@ -54,8 +54,8 @@ resource "aws_security_group" "Group18-DevSecOps" {
   }
   ingress {
     description      = "HTTP"
-    from_port        = 5000
-    to_port          = 5000
+    from_port        = 3000
+    to_port          = 3000
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
@@ -79,8 +79,8 @@ resource "aws_instance" "app_server" {
   ami                    = "ami-096800910c1b781ba"
   instance_type          = "t2.medium"
   key_name               = "devops18"
-  vpc_security_group_ids = ["${aws_security_group.Group18-DevSecOps.id}"]
-  # user_data              = file("temp.sh")
+  vpc_security_group_ids = ["${aws_security_group.Group182-DevSecOps.id}"]
+  user_data              =  file("script.sh")
   connection {
     type        = "ssh"
     user        = "ubuntu"
@@ -88,19 +88,19 @@ resource "aws_instance" "app_server" {
     private_key = file("devops18.pem")
   }
 
-  #provisioner "file" {
-  #source      = "environment"
-  # destination = "/home/ubuntu"
+ ## provisioner "file" {
+   # source      = "exec_scripts"
+   # destination = "/home/ubuntu"
   #}
 
 
   #provisioner "remote-exec" {
     # scripts = ["./exec_scripts/envsetup.sh", "./exec_scripts/service.sh"]
-   # inline = [
-    #   "sudo chmod -R 777 /home/ubuntu/environment",
-     #  "./environment/envsetup.sh"
-     #  "./environment/service.sh"
-   # ]
+    #inline = [
+     #  "sudo chmod -R 777 /home/ubuntu/exec_scripts",
+      # "./exec_scripts/envsetup.sh",
+       #"./exec_scripts/service.sh"
+    #]
   #}
 
   tags = {
