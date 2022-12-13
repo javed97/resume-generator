@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update -y
 git init
-git clone https://github.com/javed97/resume-generator.git
+git clone -b dev https://github.com/javed97/resume-generator.git
 rm -rf node_modules
 sudo apt install npm -y
 cd /home/ubuntu/resume-generator
