@@ -11,6 +11,4 @@ rm -rf node_modules
 sudo /usr/bin/npm install -y
 sudo /usr/bin/npm run build
 sleep 05
-#sudo /usr/bin/npm start & 
-forever start ./react-scripts 
-npm test
+sudo /usr/bin/npm start &;
