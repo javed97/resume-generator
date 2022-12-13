@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/ubuntu/
 sudo apt update -y
 git init
 git clone -b dev https://github.com/javed97/resume-generator.git
