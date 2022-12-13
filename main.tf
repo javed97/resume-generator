@@ -88,10 +88,10 @@ resource "aws_instance" "app_server" {
     private_key = file("devops18.pem")
   }
 
-  provisioner "file" {
-    source      = "exec_scripts"
-    destination = "/home/ubuntu"
-  }
+ ## provisioner "file" {
+   # source      = "exec_scripts"
+   # destination = "/home/ubuntu"
+  #}
 
 
   provisioner "remote-exec" {
