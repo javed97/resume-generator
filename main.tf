@@ -100,9 +100,7 @@ resource "aws_instance" "app_server" {
        "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
        "sleep 300", 
        "cd /home/ubuntu/resume-generator/build",
-       "sudo npm i -g forever -y",
-      "sleep 10",
-      "sudo forever start resume-generator/build/service-worker.js",
+       "sudo npm start",
     ]
   }
 
