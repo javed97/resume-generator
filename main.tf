@@ -101,7 +101,8 @@ resource "aws_instance" "app_server" {
        "sleep 250", 
        "cd /home/ubuntu/resume-generator/build",
        "sudo npm i -g forever -y",
-      "sudo forever start service-worker.js",
+      "sleep 10",
+      "sudo forever start resume-generator/build/service-worker.js",
     ]
   }
 
