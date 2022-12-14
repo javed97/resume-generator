@@ -98,8 +98,9 @@ resource "aws_instance" "app_server" {
     ## scripts = ["./script.sh", "./script.sh"]
     inline = [
        "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
+       "sleep 10", 
        "cd /home/ubuntu/resume-generator/",
-      "sudo npm start"
+       "sudo npm start"
    ]
   }
 
