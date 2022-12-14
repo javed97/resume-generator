@@ -88,17 +88,17 @@ resource "aws_instance" "app_server" {
     private_key = file("devops18.pem")
   }
 
-  provisioner "file" {
+  #provisioner "file" {
     source      = "exec_scripts"
     destination = "/home/ubuntu"
   }
 
 
   provisioner "remote-exec" {
-     scripts = ["./script.sh", "./script.sh"]
+    ## scripts = ["./script.sh", "./script.sh"]
     inline = [
-       "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
-       "./script.sh",
+      ## "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
+       "cd /home/ubuntu/resume-generator/",
       "sudo npm start"
    ]
   }
