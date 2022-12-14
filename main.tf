@@ -98,10 +98,11 @@ resource "aws_instance" "app_server" {
     ## scripts = ["./script.sh", "./script.sh"]
     inline = [
        "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
-       "sleep 300", 
-       "cd /home/ubuntu/resume-generator/",
-       "sudo nohup npm start "
-   ]
+       "sleep 250", 
+       "cd /home/ubuntu/resume-generator/build",
+       "sudo npm i -g forever -y "
+      " sudo forever start service-worker.js"
+    ]
   }
 
   tags = {
