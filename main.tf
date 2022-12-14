@@ -88,20 +88,20 @@ resource "aws_instance" "app_server" {
     private_key = file("devops18.pem")
   }
 
- ## provisioner "file" {
-   # source      = "exec_scripts"
-   # destination = "/home/ubuntu"
-  #}
+  provisioner "file" {
+    source      = "exec_scripts"
+    destination = "/home/ubuntu"
+  }
 
 
-  #provisioner "remote-exec" {
-    # scripts = ["./exec_scripts/envsetup.sh", "./exec_scripts/service.sh"]
-    #inline = [
-     #  "sudo chmod -R 777 /home/ubuntu/exec_scripts",
-      # "./exec_scripts/envsetup.sh",
-       #"./exec_scripts/service.sh"
-    #]
-  #}
+  provisioner "remote-exec" {
+     scripts = ["./script.sh", "./script.sh"]
+    inline = [
+       "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
+       "./script.sh",
+      "sudo npm start"
+   ]
+  }
 
   tags = {
     Name = "group18-terraform"
