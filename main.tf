@@ -89,9 +89,9 @@ resource "aws_instance" "app_server" {
   }
 
   #provisioner "file" {
-    source      = "exec_scripts"
-    destination = "/home/ubuntu"
-  }
+   # source      = "exec_scripts"
+    #destination = "/home/ubuntu"
+  #}
 
 
   provisioner "remote-exec" {
