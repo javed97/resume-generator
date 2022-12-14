@@ -100,7 +100,7 @@ resource "aws_instance" "app_server" {
        "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
        "sleep 300", 
        "cd /home/ubuntu/resume-generator/",
-       "sudo npm start & "
+       "sudo nohup npm start "
    ]
   }
 
