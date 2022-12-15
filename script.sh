@@ -1,13 +1,12 @@
 #!/bin/bash
 sudo apt update -y
+sudo apt install npm -y 
 git init
 git clone https://github.com/javed97/resume-generator.git
-rm -rf node_modules
-sudo apt install npm -y
 cd /home/ubuntu/resume-generator
 sudo npm -g install create-react-app
-rm -rf node_modules
-sudo npm install -y
-sudo npm run build
-sleep 10
+sudo rm -rf node_modules
+sudo rm -rf package-lock.json
+sudo npm install
+sleep 20
 sudo npm start
