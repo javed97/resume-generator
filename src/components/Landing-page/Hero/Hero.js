@@ -16,11 +16,12 @@ const Hero = () => {
                         <h2 class="mb-4">The Online Resume Builder <br /> You Deserve</h2>
                         <p>Creating a Professional Resume and Cover Letter Has Never Been <strong>So Easy</strong> </p>
                         <button class="mt-3 main-button">
-                            {auth.user ?
-                                <Link to='/resume-builder'>Get Started For Free</Link>
+                          {/* {auth.user ?
+                                
                                 :
                                 <Link to='/login'>Get Started For Free</Link>
-                            }
+                            } */}
+                            <Link to='/resume-builder'>See Demo</Link>
                         </button>
                     </div>
                     <div class="col-md-6">
