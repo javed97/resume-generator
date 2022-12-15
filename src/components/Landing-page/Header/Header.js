@@ -9,7 +9,7 @@ const Header = () => {
   const auth = useAuth();
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 sticky-top">
       <Link class="navbar-brand text-info" to="/">Resume Builder</Link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
