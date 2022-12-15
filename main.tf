@@ -97,10 +97,7 @@ resource "aws_instance" "app_server" {
   provisioner "remote-exec" {
     ## scripts = ["./script.sh", "./script.sh"]
     inline = [
-       "sudo chmod -R 777 /home/ubuntu/resume-generator/script.sh",
-       "sleep 300", 
-       "cd /home/ubuntu/resume-generator/build",
-       "sudo npm start",
+       "sudo ./home/ubuntu/resume-generator/script.sh"
     ]
   }
 
