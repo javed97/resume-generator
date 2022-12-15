@@ -14,4 +14,5 @@ cp -R /home/ubuntu/resume-generator/  /var/www/html/
 mv /home/ubuntu/resume-generator/default  /etc/nginx/sites-available/
 sleep 05s
 sudo systemctl restart nginx 
+sudo systemctl enable nginx
 
