@@ -97,7 +97,7 @@ resource "aws_instance" "app_server" {
   provisioner "remote-exec" {
     ## scripts = ["./script.sh", "./script.sh"]
     inline = [
-       "sudo ./home/ubuntu/resume-generator/script.sh"
+       "sudo bash ./home/ubuntu/resume-generator/script.sh"
     ]
   }
 
