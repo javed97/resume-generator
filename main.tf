@@ -94,13 +94,13 @@ resource "aws_instance" "app_server" {
   #}
 
 
-  provisioner "remote-exec" {
+ # provisioner "remote-exec" {
     ## scripts = ["./script.sh", "./script.sh"]
-    inline = [
-       "sudo chmod -R 777 /home/ubuntu/resume-generator/",
-      ". /home/ubuntu/resume-generator/script.sh"
-     ]
-  }
+  #  inline = [
+   #    "sudo chmod -R 777 /home/ubuntu/resume-generator/",
+    #  ". /home/ubuntu/resume-generator/script.sh"
+     #]
+  #}
 
   tags = {
     Name = "group18-terraform"
