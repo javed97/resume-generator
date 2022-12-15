@@ -1,5 +1,5 @@
 
-## 🛠 Front-end Thechnology : 
+## Front-end Thechnology : 
 * React.js
 * Context-API
 * Bootstrap4
